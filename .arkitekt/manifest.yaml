@@ -1,0 +1,31 @@
+identifier: my-fff
+logo: null
+requirements:
+  datalayer:
+    description: An instance of Arkitekt Datalayer to make requests to the user's
+      data
+    optional: false
+    service: live.arkitekt.datalayer
+  fluss:
+    description: An instance of Arkitekt Fluss to make requests to the user's data
+    optional: false
+    service: live.arkitekt.fluss
+  lok:
+    description: An instance of Arkitekt Lok to authenticate the user
+    optional: false
+    service: live.arkitekt.lok
+  mikro:
+    description: An instance of Arkitekt Mikro to make requests to the user's data
+    optional: true
+    service: live.arkitekt.mikro
+  port:
+    description: An instance of Arkitekt Fluss to make requests to the user's data
+    optional: true
+    service: live.arkitekt.port
+  rekuest:
+    description: An instance of Arkitekt Rekuest to assign to nodes
+    optional: false
+    service: live.arkitekt.rekuest
+scopes:
+- openid
+version: latest
