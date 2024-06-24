@@ -1,6 +1,6 @@
 deployments:
-- deployed_at: '2024-06-24T11:49:06.274987+00:00'
-  deployment_id: b14862cd-d3a1-48a1-9582-a049e2d13d85
+- deployed_at: '2024-06-24T12:00:27.882901+00:00'
+  deployment_id: 2474f4b0-62e4-48ac-8ea0-8492711b38de
   flavour: vanilla
   image: jhnnsrs/stdlib:0-3-10-vanilla
   manifest:
@@ -789,5 +789,5 @@ deployments:
       interface: z
       logo: null
       params: null
-hash: b14862cd-d3a1-48a1-9582-a049e2d13d85
-latest_deployment: b14862cd-d3a1-48a1-9582-a049e2d13d85
+hash: 2474f4b0-62e4-48ac-8ea0-8492711b38de
+latest_deployment: 2474f4b0-62e4-48ac-8ea0-8492711b38de
