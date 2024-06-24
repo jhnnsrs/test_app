@@ -1,6 +1,6 @@
 deployments:
-  - deployed_at: "2024-06-24T09:07:03.740744+00:00"
-    deployment_id: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
+  - deployed_at: "2024-06-24T09:30:54.747503+00:00"
+    deployment_id: f9de2626-e88c-4447-844d-27a4f317fac2
     flavour: vanilla
     image: jhnnsrs/stdlib:0-3-10-vanilla
     manifest:
@@ -19,6 +19,10 @@ deployments:
             data
           optional: false
           service: live.arkitekt.fluss
+        kabinet:
+          description: An instance of Arkitekt Kabinet to retrieve nodes from
+          optional: false
+          service: live.arkitekt.kabinet
         lok:
           description: An instance of Arkitekt Lok to authenticate the user
           optional: false
@@ -41,7 +45,7 @@ deployments:
           service: live.arkitekt.rekuest
       scopes:
         - openid
-      version: latest
+      version: 0.0.1
     selectors:
       - kind: cpu
         min_count: 4
@@ -801,5 +805,5 @@ deployments:
         interface: z
         logo: null
         params: null
-hash: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
-latest_deployment: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
+hash: f9de2626-e88c-4447-844d-27a4f317fac2
+latest_deployment: f9de2626-e88c-4447-844d-27a4f317fac2
