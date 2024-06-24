@@ -1,436 +1,598 @@
 deployments:
-- deployed_at: '2024-06-24T09:02:07.276880+00:00'
-  deployment_id: 3519dc46-39ae-4a51-ba20-5bd890d9f2c8
-  flavour: vanilla
-  image: jhnnsrs/stdlib:0-3-10-vanilla
-  manifest:
-    identifier: my-fff
-    logo: null
-    requirements:
-      datalayer:
-        description: An instance of Arkitekt Datalayer to make requests to the user's
-          data
-        optional: false
-        service: live.arkitekt.datalayer
-      fluss:
-        description: An instance of Arkitekt Fluss to make requests to the user's
-          data
-        optional: false
-        service: live.arkitekt.fluss
-      lok:
-        description: An instance of Arkitekt Lok to authenticate the user
-        optional: false
-        service: live.arkitekt.lok
-      mikro:
-        description: An instance of Arkitekt Mikro to make requests to the user's
-          data
-        optional: true
-        service: live.arkitekt.mikro
-      port:
-        description: An instance of Arkitekt Fluss to make requests to the user's
-          data
-        optional: true
-        service: live.arkitekt.port
-      rekuest:
-        description: An instance of Arkitekt Rekuest to assign to nodes
-        optional: false
-        service: live.arkitekt.rekuest
-    scopes:
-    - openid
-    version: latest
-  templates:
-    ask_user:
-      definition:
-        args:
-        - assign_widget: null
-          children:
-          - assign_widget: null
-            children:
+  - deployed_at: "2024-06-24T09:07:03.740744+00:00"
+    deployment_id: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
+    flavour: vanilla
+    image: jhnnsrs/stdlib:0-3-10-vanilla
+    manifest:
+      identifier: my-fff
+      logo: null
+      requirements:
+        datalayer:
+          description:
+            An instance of Arkitekt Datalayer to make requests to the user's
+            data
+          optional: false
+          service: live.arkitekt.datalayer
+        fluss:
+          description:
+            An instance of Arkitekt Fluss to make requests to the user's
+            data
+          optional: false
+          service: live.arkitekt.fluss
+        lok:
+          description: An instance of Arkitekt Lok to authenticate the user
+          optional: false
+          service: live.arkitekt.lok
+        mikro:
+          description:
+            An instance of Arkitekt Mikro to make requests to the user's
+            data
+          optional: true
+          service: live.arkitekt.mikro
+        port:
+          description:
+            An instance of Arkitekt Fluss to make requests to the user's
+            data
+          optional: true
+          service: live.arkitekt.port
+        rekuest:
+          description: An instance of Arkitekt Rekuest to assign to nodes
+          optional: false
+          service: live.arkitekt.rekuest
+      scopes:
+        - openid
+      version: latest
+    selectors:
+      - kind: cpu
+        min_count: 4
+    templates:
+      ask_user:
+        definition:
+          args:
             - assign_widget: null
-              children: null
+              children:
+                - assign_widget: null
+                  children:
+                    - assign_widget: null
+                      children: null
+                      default: null
+                      description: The label of the ROI
+                      effects: null
+                      identifier: null
+                      key: label
+                      kind: STRING
+                      label: null
+                      nullable: false
+                      return_widget: null
+                      scope: GLOBAL
+                    - assign_widget:
+                        as_paragraph: null
+                        choices:
+                          - description: null
+                            label: ELLIPSIS
+                            value: ELLIPSIS
+                          - description: null
+                            label: POLYGON
+                            value: POLYGON
+                          - description: null
+                            label: LINE
+                            value: LINE
+                          - description: null
+                            label: RECTANGLE
+                            value: RECTANGLE
+                          - description: null
+                            label: SPECTRAL_RECTANGLE
+                            value: SPECTRAL_RECTANGLE
+                          - description: null
+                            label: TEMPORAL_RECTANGLE
+                            value: TEMPORAL_RECTANGLE
+                          - description: null
+                            label: CUBE
+                            value: CUBE
+                          - description: null
+                            label: SPECTRAL_CUBE
+                            value: SPECTRAL_CUBE
+                          - description: null
+                            label: TEMPORAL_CUBE
+                            value: TEMPORAL_CUBE
+                          - description: null
+                            label: HYPERCUBE
+                            value: HYPERCUBE
+                          - description: null
+                            label: SPECTRAL_HYPERCUBE
+                            value: SPECTRAL_HYPERCUBE
+                          - description: null
+                            label: PATH
+                            value: PATH
+                          - description: null
+                            label: UNKNOWN
+                            value: UNKNOWN
+                          - description: null
+                            label: FRAME
+                            value: FRAME
+                          - description: null
+                            label: SLICE
+                            value: SLICE
+                          - description: null
+                            label: POINT
+                            value: POINT
+                        hook: null
+                        kind: CHOICE
+                        max: null
+                        min: null
+                        placeholder: null
+                        query: null
+                        step: null
+                        ward: null
+                      children: null
+                      default: null
+                      description: null
+                      effects: null
+                      identifier: mikro_next.api.schema.roikind
+                      key: roi_type
+                      kind: STRUCTURE
+                      label: null
+                      nullable: false
+                      return_widget:
+                        choices:
+                          - description: null
+                            label: ELLIPSIS
+                            value: ELLIPSIS
+                          - description: null
+                            label: POLYGON
+                            value: POLYGON
+                          - description: null
+                            label: LINE
+                            value: LINE
+                          - description: null
+                            label: RECTANGLE
+                            value: RECTANGLE
+                          - description: null
+                            label: SPECTRAL_RECTANGLE
+                            value: SPECTRAL_RECTANGLE
+                          - description: null
+                            label: TEMPORAL_RECTANGLE
+                            value: TEMPORAL_RECTANGLE
+                          - description: null
+                            label: CUBE
+                            value: CUBE
+                          - description: null
+                            label: SPECTRAL_CUBE
+                            value: SPECTRAL_CUBE
+                          - description: null
+                            label: TEMPORAL_CUBE
+                            value: TEMPORAL_CUBE
+                          - description: null
+                            label: HYPERCUBE
+                            value: HYPERCUBE
+                          - description: null
+                            label: SPECTRAL_HYPERCUBE
+                            value: SPECTRAL_HYPERCUBE
+                          - description: null
+                            label: PATH
+                            value: PATH
+                          - description: null
+                            label: UNKNOWN
+                            value: UNKNOWN
+                          - description: null
+                            label: FRAME
+                            value: FRAME
+                          - description: null
+                            label: SLICE
+                            value: SLICE
+                          - description: null
+                            label: POINT
+                            value: POINT
+                        hook: null
+                        kind: CHOICE
+                        max: null
+                        min: null
+                        placeholder: null
+                        query: null
+                        step: null
+                        ward: null
+                      scope: GLOBAL
+                    - assign_widget: null
+                      children: null
+                      default: null
+                      description: null
+                      effects: null
+                      identifier: null
+                      key: is_cool
+                      kind: BOOL
+                      label: null
+                      nullable: true
+                      return_widget: null
+                      scope: GLOBAL
+                  default: null
+                  description:
+                    "Labeling(*, label: str, roi_type: mikro_next.api.schema.RoiKind,
+                    is_cool: bool | None = None)"
+                  effects: null
+                  identifier: labeling
+                  key: "..."
+                  kind: MODEL
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
               default: null
-              description: The label of the ROI
+              description: A list of labelings
               effects: null
+              groups: null
               identifier: null
-              key: label
-              kind: STRING
+              key: x
+              kind: LIST
+              label: x
+              nullable: false
+              return_widget: null
+              scope: GLOBAL
+              validators: null
+          collections: []
+          description: Will return the labeling that the user selects.
+          interfaces: []
+          is_test_for: null
+          kind: FUNCTION
+          name: Ask user for Labeling
+          port_groups: []
+          returns:
+            - assign_widget: null
+              children:
+                - assign_widget: null
+                  children: null
+                  default: null
+                  description: The label of the ROI
+                  effects: null
+                  identifier: null
+                  key: label
+                  kind: STRING
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+                - assign_widget:
+                    as_paragraph: null
+                    choices:
+                      - description: null
+                        label: ELLIPSIS
+                        value: ELLIPSIS
+                      - description: null
+                        label: POLYGON
+                        value: POLYGON
+                      - description: null
+                        label: LINE
+                        value: LINE
+                      - description: null
+                        label: RECTANGLE
+                        value: RECTANGLE
+                      - description: null
+                        label: SPECTRAL_RECTANGLE
+                        value: SPECTRAL_RECTANGLE
+                      - description: null
+                        label: TEMPORAL_RECTANGLE
+                        value: TEMPORAL_RECTANGLE
+                      - description: null
+                        label: CUBE
+                        value: CUBE
+                      - description: null
+                        label: SPECTRAL_CUBE
+                        value: SPECTRAL_CUBE
+                      - description: null
+                        label: TEMPORAL_CUBE
+                        value: TEMPORAL_CUBE
+                      - description: null
+                        label: HYPERCUBE
+                        value: HYPERCUBE
+                      - description: null
+                        label: SPECTRAL_HYPERCUBE
+                        value: SPECTRAL_HYPERCUBE
+                      - description: null
+                        label: PATH
+                        value: PATH
+                      - description: null
+                        label: UNKNOWN
+                        value: UNKNOWN
+                      - description: null
+                        label: FRAME
+                        value: FRAME
+                      - description: null
+                        label: SLICE
+                        value: SLICE
+                      - description: null
+                        label: POINT
+                        value: POINT
+                    hook: null
+                    kind: CHOICE
+                    max: null
+                    min: null
+                    placeholder: null
+                    query: null
+                    step: null
+                    ward: null
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: mikro_next.api.schema.roikind
+                  key: roi_type
+                  kind: STRUCTURE
+                  label: null
+                  nullable: false
+                  return_widget:
+                    choices:
+                      - description: null
+                        label: ELLIPSIS
+                        value: ELLIPSIS
+                      - description: null
+                        label: POLYGON
+                        value: POLYGON
+                      - description: null
+                        label: LINE
+                        value: LINE
+                      - description: null
+                        label: RECTANGLE
+                        value: RECTANGLE
+                      - description: null
+                        label: SPECTRAL_RECTANGLE
+                        value: SPECTRAL_RECTANGLE
+                      - description: null
+                        label: TEMPORAL_RECTANGLE
+                        value: TEMPORAL_RECTANGLE
+                      - description: null
+                        label: CUBE
+                        value: CUBE
+                      - description: null
+                        label: SPECTRAL_CUBE
+                        value: SPECTRAL_CUBE
+                      - description: null
+                        label: TEMPORAL_CUBE
+                        value: TEMPORAL_CUBE
+                      - description: null
+                        label: HYPERCUBE
+                        value: HYPERCUBE
+                      - description: null
+                        label: SPECTRAL_HYPERCUBE
+                        value: SPECTRAL_HYPERCUBE
+                      - description: null
+                        label: PATH
+                        value: PATH
+                      - description: null
+                        label: UNKNOWN
+                        value: UNKNOWN
+                      - description: null
+                        label: FRAME
+                        value: FRAME
+                      - description: null
+                        label: SLICE
+                        value: SLICE
+                      - description: null
+                        label: POINT
+                        value: POINT
+                    hook: null
+                    kind: CHOICE
+                    max: null
+                    min: null
+                    placeholder: null
+                    query: null
+                    step: null
+                    ward: null
+                  scope: GLOBAL
+                - assign_widget: null
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: null
+                  key: is_cool
+                  kind: BOOL
+                  label: null
+                  nullable: true
+                  return_widget: null
+                  scope: GLOBAL
+              default: {}
+              description: Oh, the selected labeling
+              effects: null
+              groups: null
+              identifier: labeling
+              key: return0
+              kind: MODEL
               label: null
               nullable: false
               return_widget: null
               scope: GLOBAL
-            - assign_widget:
-                as_paragraph: null
-                choices:
-                - description: null
-                  label: ELLIPSIS
-                  value: ELLIPSIS
-                - description: null
-                  label: POLYGON
-                  value: POLYGON
-                - description: null
-                  label: LINE
-                  value: LINE
-                - description: null
-                  label: RECTANGLE
-                  value: RECTANGLE
-                - description: null
-                  label: SPECTRAL_RECTANGLE
-                  value: SPECTRAL_RECTANGLE
-                - description: null
-                  label: TEMPORAL_RECTANGLE
-                  value: TEMPORAL_RECTANGLE
-                - description: null
-                  label: CUBE
-                  value: CUBE
-                - description: null
-                  label: SPECTRAL_CUBE
-                  value: SPECTRAL_CUBE
-                - description: null
-                  label: TEMPORAL_CUBE
-                  value: TEMPORAL_CUBE
-                - description: null
-                  label: HYPERCUBE
-                  value: HYPERCUBE
-                - description: null
-                  label: SPECTRAL_HYPERCUBE
-                  value: SPECTRAL_HYPERCUBE
-                - description: null
-                  label: PATH
-                  value: PATH
-                - description: null
-                  label: UNKNOWN
-                  value: UNKNOWN
-                - description: null
-                  label: FRAME
-                  value: FRAME
-                - description: null
-                  label: SLICE
-                  value: SLICE
-                - description: null
-                  label: POINT
-                  value: POINT
-                hook: null
-                kind: CHOICE
-                max: null
-                min: null
-                placeholder: null
-                query: null
-                step: null
-                ward: null
-              children: null
+              validators: null
+        dependencies: null
+        dynamic: false
+        extension: default
+        instance_id: null
+        interface: ask_user
+        logo: null
+        params: null
+      f:
+        definition:
+          args:
+            - assign_widget: null
+              children:
+                - assign_widget: null
+                  children:
+                    - assign_widget: null
+                      children: null
+                      default: null
+                      description: null
+                      effects: null
+                      identifier: null
+                      key: name
+                      kind: STRING
+                      label: null
+                      nullable: false
+                      return_widget: null
+                      scope: GLOBAL
+                    - assign_widget: null
+                      children: null
+                      default: null
+                      description: null
+                      effects: null
+                      identifier: null
+                      key: age
+                      kind: INT
+                      label: null
+                      nullable: false
+                      return_widget: null
+                      scope: GLOBAL
+                    - assign_widget:
+                        as_paragraph: null
+                        choices: null
+                        hook: null
+                        kind: SEARCH
+                        max: null
+                        min: null
+                        placeholder: null
+                        query:
+                          "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                          \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
+                          \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
+                          \  }\n}"
+                        step: null
+                        ward: mikro
+                      children: null
+                      default: null
+                      description: null
+                      effects: null
+                      identifier: "@mikro/image"
+                      key: roi
+                      kind: STRUCTURE
+                      label: null
+                      nullable: false
+                      return_widget: null
+                      scope: GLOBAL
+                  default: null
+                  description: "MyModel(name: str, age: int, roi: mikro_next.api.schema.ImageFragment)"
+                  effects: null
+                  identifier: my_model
+                  key: variant_0
+                  kind: MODEL
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+                - assign_widget:
+                    as_paragraph: null
+                    choices: null
+                    hook: null
+                    kind: SEARCH
+                    max: null
+                    min: null
+                    placeholder: null
+                    query:
+                      "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                      \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
+                      \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
+                      \  }\n}"
+                    step: null
+                    ward: mikro
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: "@mikro/image"
+                  key: variant_1
+                  kind: STRUCTURE
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
               default: null
               description: null
               effects: null
-              identifier: mikro_next.api.schema.roikind
-              key: roi_type
-              kind: STRUCTURE
+              groups: null
+              identifier: null
+              key: x
+              kind: UNION
               label: null
               nullable: false
-              return_widget:
-                choices:
-                - description: null
-                  label: ELLIPSIS
-                  value: ELLIPSIS
-                - description: null
-                  label: POLYGON
-                  value: POLYGON
-                - description: null
-                  label: LINE
-                  value: LINE
-                - description: null
-                  label: RECTANGLE
-                  value: RECTANGLE
-                - description: null
-                  label: SPECTRAL_RECTANGLE
-                  value: SPECTRAL_RECTANGLE
-                - description: null
-                  label: TEMPORAL_RECTANGLE
-                  value: TEMPORAL_RECTANGLE
-                - description: null
-                  label: CUBE
-                  value: CUBE
-                - description: null
-                  label: SPECTRAL_CUBE
-                  value: SPECTRAL_CUBE
-                - description: null
-                  label: TEMPORAL_CUBE
-                  value: TEMPORAL_CUBE
-                - description: null
-                  label: HYPERCUBE
-                  value: HYPERCUBE
-                - description: null
-                  label: SPECTRAL_HYPERCUBE
-                  value: SPECTRAL_HYPERCUBE
-                - description: null
-                  label: PATH
-                  value: PATH
-                - description: null
-                  label: UNKNOWN
-                  value: UNKNOWN
-                - description: null
-                  label: FRAME
-                  value: FRAME
-                - description: null
-                  label: SLICE
-                  value: SLICE
-                - description: null
-                  label: POINT
-                  value: POINT
-                hook: null
-                kind: CHOICE
-                max: null
-                min: null
-                placeholder: null
-                query: null
-                step: null
-                ward: null
+              return_widget: null
               scope: GLOBAL
+              validators: null
+          collections: []
+          description: No Description
+          interfaces: []
+          is_test_for: null
+          kind: FUNCTION
+          name: I am a model union
+          port_groups: []
+          returns:
             - assign_widget: null
               children: null
               default: null
               description: null
               effects: null
+              groups: null
               identifier: null
-              key: is_cool
+              key: return0
               kind: BOOL
               label: null
-              nullable: true
+              nullable: false
               return_widget: null
               scope: GLOBAL
-            default: null
-            description: 'Labeling(*, label: str, roi_type: mikro_next.api.schema.RoiKind,
-              is_cool: bool | None = None)'
-            effects: null
-            identifier: labeling
-            key: '...'
-            kind: MODEL
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          default: null
-          description: A list of labelings
-          effects: null
-          groups: null
-          identifier: null
-          key: x
-          kind: LIST
-          label: x
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-        collections: []
-        description: Will return the labeling that the user selects.
-        interfaces: []
-        is_test_for: null
-        kind: FUNCTION
-        name: Ask user for Labeling
-        port_groups: []
-        returns:
-        - assign_widget: null
-          children:
-          - assign_widget: null
-            children: null
-            default: null
-            description: The label of the ROI
-            effects: null
-            identifier: null
-            key: label
-            kind: STRING
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          - assign_widget:
-              as_paragraph: null
-              choices:
-              - description: null
-                label: ELLIPSIS
-                value: ELLIPSIS
-              - description: null
-                label: POLYGON
-                value: POLYGON
-              - description: null
-                label: LINE
-                value: LINE
-              - description: null
-                label: RECTANGLE
-                value: RECTANGLE
-              - description: null
-                label: SPECTRAL_RECTANGLE
-                value: SPECTRAL_RECTANGLE
-              - description: null
-                label: TEMPORAL_RECTANGLE
-                value: TEMPORAL_RECTANGLE
-              - description: null
-                label: CUBE
-                value: CUBE
-              - description: null
-                label: SPECTRAL_CUBE
-                value: SPECTRAL_CUBE
-              - description: null
-                label: TEMPORAL_CUBE
-                value: TEMPORAL_CUBE
-              - description: null
-                label: HYPERCUBE
-                value: HYPERCUBE
-              - description: null
-                label: SPECTRAL_HYPERCUBE
-                value: SPECTRAL_HYPERCUBE
-              - description: null
-                label: PATH
-                value: PATH
-              - description: null
-                label: UNKNOWN
-                value: UNKNOWN
-              - description: null
-                label: FRAME
-                value: FRAME
-              - description: null
-                label: SLICE
-                value: SLICE
-              - description: null
-                label: POINT
-                value: POINT
-              hook: null
-              kind: CHOICE
-              max: null
-              min: null
-              placeholder: null
-              query: null
-              step: null
-              ward: null
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: mikro_next.api.schema.roikind
-            key: roi_type
-            kind: STRUCTURE
-            label: null
-            nullable: false
-            return_widget:
-              choices:
-              - description: null
-                label: ELLIPSIS
-                value: ELLIPSIS
-              - description: null
-                label: POLYGON
-                value: POLYGON
-              - description: null
-                label: LINE
-                value: LINE
-              - description: null
-                label: RECTANGLE
-                value: RECTANGLE
-              - description: null
-                label: SPECTRAL_RECTANGLE
-                value: SPECTRAL_RECTANGLE
-              - description: null
-                label: TEMPORAL_RECTANGLE
-                value: TEMPORAL_RECTANGLE
-              - description: null
-                label: CUBE
-                value: CUBE
-              - description: null
-                label: SPECTRAL_CUBE
-                value: SPECTRAL_CUBE
-              - description: null
-                label: TEMPORAL_CUBE
-                value: TEMPORAL_CUBE
-              - description: null
-                label: HYPERCUBE
-                value: HYPERCUBE
-              - description: null
-                label: SPECTRAL_HYPERCUBE
-                value: SPECTRAL_HYPERCUBE
-              - description: null
-                label: PATH
-                value: PATH
-              - description: null
-                label: UNKNOWN
-                value: UNKNOWN
-              - description: null
-                label: FRAME
-                value: FRAME
-              - description: null
-                label: SLICE
-                value: SLICE
-              - description: null
-                label: POINT
-                value: POINT
-              hook: null
-              kind: CHOICE
-              max: null
-              min: null
-              placeholder: null
-              query: null
-              step: null
-              ward: null
-            scope: GLOBAL
-          - assign_widget: null
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: null
-            key: is_cool
-            kind: BOOL
-            label: null
-            nullable: true
-            return_widget: null
-            scope: GLOBAL
-          default: {}
-          description: Oh, the selected labeling
-          effects: null
-          groups: null
-          identifier: labeling
-          key: return0
-          kind: MODEL
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-      dependencies: null
-      dynamic: false
-      extension: default
-      instance_id: null
-      interface: ask_user
-      logo: null
-      params: null
-    f:
-      definition:
-        args:
-        - assign_widget: null
-          children:
-          - assign_widget: null
-            children:
+              validators: null
+        dependencies: null
+        dynamic: false
+        extension: default
+        instance_id: null
+        interface: f
+        logo: null
+        params: null
+      test:
+        definition:
+          args:
             - assign_widget: null
-              children: null
+              children:
+                - assign_widget:
+                    as_paragraph: null
+                    choices: null
+                    hook: null
+                    kind: SEARCH
+                    max: null
+                    min: null
+                    placeholder: null
+                    query:
+                      "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                      \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
+                      \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
+                      \  }\n}"
+                    step: null
+                    ward: mikro
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: "@mikro/image"
+                  key: "..."
+                  kind: STRUCTURE
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
               default: null
               description: null
               effects: null
+              groups: null
               identifier: null
-              key: name
-              kind: STRING
+              key: x
+              kind: LIST
               label: null
               nullable: false
               return_widget: null
               scope: GLOBAL
-            - assign_widget: null
-              children: null
-              default: null
-              description: null
-              effects: null
-              identifier: null
-              key: age
-              kind: INT
-              label: null
-              nullable: false
-              return_widget: null
-              scope: GLOBAL
+              validators: null
+          collections: []
+          description: No Description
+          interfaces: []
+          is_test_for: null
+          kind: FUNCTION
+          name: I am a list
+          port_groups: []
+          returns:
             - assign_widget:
                 as_paragraph: null
                 choices: null
@@ -439,7 +601,8 @@ deployments:
                 max: null
                 min: null
                 placeholder: null
-                query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                query:
+                  "query SearchImages($search: String, $values: [ID!]) {\n  options:\
                   \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
                   \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
                   \  }\n}"
@@ -449,343 +612,194 @@ deployments:
               default: null
               description: null
               effects: null
-              identifier: '@mikro/image'
-              key: roi
+              groups: null
+              identifier: "@mikro/image"
+              key: return0
               kind: STRUCTURE
               label: null
               nullable: false
               return_widget: null
               scope: GLOBAL
-            default: null
-            description: 'MyModel(name: str, age: int, roi: mikro_next.api.schema.ImageFragment)'
-            effects: null
-            identifier: my_model
-            key: variant_0
-            kind: MODEL
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          - assign_widget:
-              as_paragraph: null
-              choices: null
-              hook: null
-              kind: SEARCH
-              max: null
-              min: null
-              placeholder: null
-              query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
-                \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
-                \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
-                \  }\n}"
-              step: null
-              ward: mikro
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: '@mikro/image'
-            key: variant_1
-            kind: STRUCTURE
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: x
-          kind: UNION
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-        collections: []
-        description: No Description
-        interfaces: []
-        is_test_for: null
-        kind: FUNCTION
-        name: I am a model union
-        port_groups: []
-        returns:
-        - assign_widget: null
-          children: null
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: return0
-          kind: BOOL
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-      dependencies: null
-      dynamic: false
-      extension: default
-      instance_id: null
-      interface: f
-      logo: null
-      params: null
-    test:
-      definition:
-        args:
-        - assign_widget: null
-          children:
-          - assign_widget:
-              as_paragraph: null
-              choices: null
-              hook: null
-              kind: SEARCH
-              max: null
-              min: null
-              placeholder: null
-              query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
-                \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
-                \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
-                \  }\n}"
-              step: null
-              ward: mikro
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: '@mikro/image'
-            key: '...'
-            kind: STRUCTURE
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: x
-          kind: LIST
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-        collections: []
-        description: No Description
-        interfaces: []
-        is_test_for: null
-        kind: FUNCTION
-        name: I am a list
-        port_groups: []
-        returns:
-        - assign_widget:
-            as_paragraph: null
-            choices: null
-            hook: null
-            kind: SEARCH
-            max: null
-            min: null
-            placeholder: null
-            query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
-              \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
-              \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
-              \  }\n}"
-            step: null
-            ward: mikro
-          children: null
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: '@mikro/image'
-          key: return0
-          kind: STRUCTURE
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-      dependencies:
-      - binds: null
-        hash: segment_cells
-        optional: false
-        reference: null
-        viable_instances: null
-      dynamic: false
-      extension: default
-      instance_id: null
-      interface: test
-      logo: null
-      params: null
-    xxxxxx:
-      definition:
-        args:
-        - assign_widget: null
-          children:
-          - assign_widget:
-              as_paragraph: null
-              choices: null
-              hook: null
-              kind: SEARCH
-              max: null
-              min: null
-              placeholder: null
-              query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
-                \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
-                \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
-                \  }\n}"
-              step: null
-              ward: mikro
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: '@mikro/image'
-            key: '...'
-            kind: STRUCTURE
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: x
-          kind: DICT
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-        collections: []
-        description: No Description
-        interfaces: []
-        is_test_for: null
-        kind: FUNCTION
-        name: I am a dict
-        port_groups: []
-        returns:
-        - assign_widget: null
-          children: null
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: return0
-          kind: BOOL
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-      dependencies: null
-      dynamic: false
-      extension: default
-      instance_id: null
-      interface: xxxxxx
-      logo: null
-      params: null
-    z:
-      definition:
-        args:
-        - assign_widget: null
-          children:
-          - assign_widget: null
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: null
-            key: name
-            kind: STRING
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          - assign_widget: null
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: null
-            key: age
-            kind: INT
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          - assign_widget:
-              as_paragraph: null
-              choices: null
-              hook: null
-              kind: SEARCH
-              max: null
-              min: null
-              placeholder: null
-              query: "query SearchImages($search: String, $values: [ID!]) {\n  options:\
-                \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
-                \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
-                \  }\n}"
-              step: null
-              ward: mikro
-            children: null
-            default: null
-            description: null
-            effects: null
-            identifier: '@mikro/image'
-            key: roi
-            kind: STRUCTURE
-            label: null
-            nullable: false
-            return_widget: null
-            scope: GLOBAL
-          default: {}
-          description: 'MyModel(name: str, age: int, roi: mikro_next.api.schema.ImageFragment)'
-          effects: null
-          groups: null
-          identifier: my_model
-          key: x
-          kind: MODEL
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-        collections: []
-        description: No Description
-        interfaces: []
-        is_test_for: null
-        kind: FUNCTION
-        name: I am a model
-        port_groups: []
-        returns:
-        - assign_widget: null
-          children: null
-          default: null
-          description: null
-          effects: null
-          groups: null
-          identifier: null
-          key: return0
-          kind: BOOL
-          label: null
-          nullable: false
-          return_widget: null
-          scope: GLOBAL
-          validators: null
-      dependencies: null
-      dynamic: false
-      extension: default
-      instance_id: null
-      interface: z
-      logo: null
-      params: null
-hash: 3519dc46-39ae-4a51-ba20-5bd890d9f2c8
-latest_deployment: 3519dc46-39ae-4a51-ba20-5bd890d9f2c8
+              validators: null
+        dependencies:
+          - binds: null
+            hash: segment_cells
+            optional: false
+            reference: null
+            viable_instances: null
+        dynamic: false
+        extension: default
+        instance_id: null
+        interface: test
+        logo: null
+        params: null
+      xxxxxx:
+        definition:
+          args:
+            - assign_widget: null
+              children:
+                - assign_widget:
+                    as_paragraph: null
+                    choices: null
+                    hook: null
+                    kind: SEARCH
+                    max: null
+                    min: null
+                    placeholder: null
+                    query:
+                      "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                      \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
+                      \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
+                      \  }\n}"
+                    step: null
+                    ward: mikro
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: "@mikro/image"
+                  key: "..."
+                  kind: STRUCTURE
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+              default: null
+              description: null
+              effects: null
+              groups: null
+              identifier: null
+              key: x
+              kind: DICT
+              label: null
+              nullable: false
+              return_widget: null
+              scope: GLOBAL
+              validators: null
+          collections: []
+          description: No Description
+          interfaces: []
+          is_test_for: null
+          kind: FUNCTION
+          name: I am a dict
+          port_groups: []
+          returns:
+            - assign_widget: null
+              children: null
+              default: null
+              description: null
+              effects: null
+              groups: null
+              identifier: null
+              key: return0
+              kind: BOOL
+              label: null
+              nullable: false
+              return_widget: null
+              scope: GLOBAL
+              validators: null
+        dependencies: null
+        dynamic: false
+        extension: default
+        instance_id: null
+        interface: xxxxxx
+        logo: null
+        params: null
+      z:
+        definition:
+          args:
+            - assign_widget: null
+              children:
+                - assign_widget: null
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: null
+                  key: name
+                  kind: STRING
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+                - assign_widget: null
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: null
+                  key: age
+                  kind: INT
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+                - assign_widget:
+                    as_paragraph: null
+                    choices: null
+                    hook: null
+                    kind: SEARCH
+                    max: null
+                    min: null
+                    placeholder: null
+                    query:
+                      "query SearchImages($search: String, $values: [ID!]) {\n  options:\
+                      \ images(\n    filters: {name: {contains: $search}, ids: $values}\n\
+                      \    pagination: {limit: 10}\n  ) {\n    value: id\n    label: name\n\
+                      \  }\n}"
+                    step: null
+                    ward: mikro
+                  children: null
+                  default: null
+                  description: null
+                  effects: null
+                  identifier: "@mikro/image"
+                  key: roi
+                  kind: STRUCTURE
+                  label: null
+                  nullable: false
+                  return_widget: null
+                  scope: GLOBAL
+              default: {}
+              description: "MyModel(name: str, age: int, roi: mikro_next.api.schema.ImageFragment)"
+              effects: null
+              groups: null
+              identifier: my_model
+              key: x
+              kind: MODEL
+              label: null
+              nullable: false
+              return_widget: null
+              scope: GLOBAL
+              validators: null
+          collections: []
+          description: No Description
+          interfaces: []
+          is_test_for: null
+          kind: FUNCTION
+          name: I am a model
+          port_groups: []
+          returns:
+            - assign_widget: null
+              children: null
+              default: null
+              description: null
+              effects: null
+              groups: null
+              identifier: null
+              key: return0
+              kind: BOOL
+              label: null
+              nullable: false
+              return_widget: null
+              scope: GLOBAL
+              validators: null
+        dependencies: null
+        dynamic: false
+        extension: default
+        instance_id: null
+        interface: z
+        logo: null
+        params: null
+hash: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
+latest_deployment: 1e48fca7-6b6a-4456-a912-e9c674a9bf18
